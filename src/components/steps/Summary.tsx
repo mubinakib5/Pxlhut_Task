@@ -7,69 +7,70 @@ export default function Summary() {
 
   return (
     <div className="space-y-8">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">Summary</h2>
+      <h2 className="text-2xl font-bold text-gray-700 mb-6">Summary</h2>
 
       <div className="space-y-6">
         <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+          <h3 className="text-lg font-semibold text-gray-700 mb-3 flex items-center">
             <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm mr-3">1</span>
             Personal Information
           </h3>
           <div className="bg-white rounded-lg border border-gray-200 p-5 ml-11">
             <dl className="space-y-3">
               <div className="flex">
-                <dt className="w-24 flex-shrink-0 text-gray-500">Name:</dt>
-                <dd className="text-gray-900 font-medium">{formData.personalInfo?.fullName}</dd>
+                <dt className="w-24 flex-shrink-0 text-gray-700">Name:</dt>
+                <dd className="text-gray-700 font-medium">{formData.personalInfo?.fullName}</dd>
               </div>
               <div className="flex">
-                <dt className="w-24 flex-shrink-0 text-gray-500">Email:</dt>
-                <dd className="text-gray-900 font-medium">{formData.personalInfo?.email}</dd>
+                <dt className="w-24 flex-shrink-0 text-gray-700">Email:</dt>
+                <dd className="text-gray-700 font-medium">{formData.personalInfo?.email}</dd>
               </div>
               <div className="flex">
-                <dt className="w-24 flex-shrink-0 text-gray-500">Phone:</dt>
-                <dd className="text-gray-900 font-medium">{formData.personalInfo?.phoneNumber}</dd>
+                <dt className="w-24 flex-shrink-0 text-gray-700">Phone:</dt>
+                <dd className="text-gray-700 font-medium">{formData.personalInfo?.phoneNumber}</dd>
               </div>
             </dl>
           </div>
         </div>
 
+        {/* Similar updates for Address and Account sections */}
         <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+          <h3 className="text-lg font-semibold text-gray-700 mb-3 flex items-center">
             <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm mr-3">2</span>
             Address Details
           </h3>
           <div className="bg-white rounded-lg border border-gray-200 p-5 ml-11">
             <dl className="space-y-3">
               <div className="flex">
-                <dt className="w-24 flex-shrink-0 text-gray-500">Street:</dt>
-                <dd className="text-gray-900 font-medium">{formData.address?.streetAddress}</dd>
+                <dt className="w-24 flex-shrink-0 text-gray-700">Street:</dt>
+                <dd className="text-gray-700 font-medium">{formData.address?.streetAddress}</dd>
               </div>
               <div className="flex">
-                <dt className="w-24 flex-shrink-0 text-gray-500">City:</dt>
-                <dd className="text-gray-900 font-medium">{formData.address?.city}</dd>
+                <dt className="w-24 flex-shrink-0 text-gray-700">City:</dt>
+                <dd className="text-gray-700 font-medium">{formData.address?.city}</dd>
               </div>
               <div className="flex">
-                <dt className="w-24 flex-shrink-0 text-gray-500">ZIP:</dt>
-                <dd className="text-gray-900 font-medium">{formData.address?.zipCode}</dd>
+                <dt className="w-24 flex-shrink-0 text-gray-700">ZIP:</dt>
+                <dd className="text-gray-700 font-medium">{formData.address?.zipCode}</dd>
               </div>
             </dl>
           </div>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+          <h3 className="text-lg font-semibold text-gray-700 mb-3 flex items-center">
             <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm mr-3">3</span>
             Account Information
           </h3>
           <div className="bg-white rounded-lg border border-gray-200 p-5 ml-11">
             <dl className="space-y-3">
               <div className="flex">
-                <dt className="w-24 flex-shrink-0 text-gray-500">Username:</dt>
-                <dd className="text-gray-900 font-medium">{formData.account?.username}</dd>
+                <dt className="w-24 flex-shrink-0 text-gray-700">Username:</dt>
+                <dd className="text-gray-700 font-medium">{formData.account?.username}</dd>
               </div>
               <div className="flex">
-                <dt className="w-24 flex-shrink-0 text-gray-500">Password:</dt>
-                <dd className="text-gray-900 font-medium">********</dd>
+                <dt className="w-24 flex-shrink-0 text-gray-700">Password:</dt>
+                <dd className="text-gray-700 font-medium">********</dd>
               </div>
             </dl>
           </div>

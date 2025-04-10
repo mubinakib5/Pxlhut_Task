@@ -9,7 +9,9 @@ const queryClient = new QueryClient();
 export default function Providers({ children }: { children: ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <FormProvider>{children}</FormProvider>
+      <FormProvider>
+        {children}
+      </FormProvider>
     </QueryClientProvider>
   );
 }

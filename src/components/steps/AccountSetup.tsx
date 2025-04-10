@@ -21,35 +21,35 @@ export default function AccountSetup() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      <div>
-        <label className="block text-sm font-medium text-gray-800 mb-2">
-          Username
-        </label>
-        <input
-          {...register('username')}
-          className="mt-1 block w-full rounded-md border border-gray-200 bg-white text-gray-900 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors duration-300"
-        />
-        {errors.username && (
-          <p className="mt-1 text-sm text-red-600">{errors.username.message}</p>
-        )}
+      <div className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Username
+          </label>
+          <input
+            {...register('username')}
+            className="mt-1 block w-full rounded-md border border-gray-200 bg-white text-gray-900 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors duration-300"
+          />
+          {errors.username && (
+            <p className="mt-1 text-sm text-rose-600">{errors.username.message}</p>
+          )}
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Password
+          </label>
+          <input
+            {...register('password')}
+            type="password"
+            className="mt-1 block w-full rounded-md border border-gray-200 bg-white text-gray-900 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors duration-300"
+          />
+          {errors.password && (
+            <p className="mt-1 text-sm text-red-600">{errors.password.message}</p>
+          )}
+        </div>
       </div>
-
       <div>
-        <label className="block text-sm font-medium text-gray-800 mb-2">
-          Password
-        </label>
-        <input
-          {...register('password')}
-          type="password"
-          className="mt-1 block w-full rounded-md border border-gray-200 bg-white text-gray-900 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors duration-300"
-        />
-        {errors.password && (
-          <p className="mt-1 text-sm text-red-600">{errors.password.message}</p>
-        )}
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium text-gray-800 mb-2">
+        <label className="block text-sm font-medium text-gray-700 mb-2">
           Confirm Password
         </label>
         <input

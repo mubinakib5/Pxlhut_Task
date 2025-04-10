@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Providers from "@/providers/Providers";  // Changed from { Providers }
+import Providers from "@/providers/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Multi-Step Form",
-  description: "A multi-step form with validation",
+  title: "PxlHut",
+  description: "Your image processing hub",
 };
 
 export default function RootLayout({

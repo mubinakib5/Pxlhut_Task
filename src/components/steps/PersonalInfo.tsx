@@ -23,22 +23,23 @@ export default function PersonalInfo() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      <div>
-        <label className="block text-sm font-medium text-gray-800 mb-2">
-          Full Name
-        </label>
-        <input
-          {...register('fullName')}
-          className="mt-1 block w-full rounded-md border border-gray-200 bg-white text-gray-900 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors duration-300"
-        />
-        {errors.fullName && (
-          <p className="mt-1 text-sm text-red-600">{errors.fullName.message}</p>
-        )}
+      <div className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Full Name
+          </label>
+          <input
+            {...register('fullName')}
+            className="mt-1 block w-full rounded-md border border-gray-200 bg-white text-gray-900 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors duration-300"
+          />
+          {errors.fullName && (
+            <p className="mt-1 text-sm text-rose-600">{errors.fullName.message}</p>
+          )}
+        </div>
       </div>
-
       <div>
-        <label className="block text-sm font-medium text-gray-800 mb-2">
-          Email
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Email Address
         </label>
         <input
           {...register('email')}
@@ -49,9 +50,8 @@ export default function PersonalInfo() {
           <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
         )}
       </div>
-
       <div>
-        <label className="block text-sm font-medium text-gray-800 mb-2">
+        <label className="block text-sm font-medium text-gray-700 mb-2">
           Phone Number
         </label>
         <input

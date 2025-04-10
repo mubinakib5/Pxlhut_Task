@@ -6,10 +6,17 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class', // Add this line
+  darkMode: 'class',
   theme: {
     extend: {
-      // ... your existing theme extensions
+      backgroundColor: {
+        'light-bg': '#ffffff',
+        'dark-bg': '#1a1a1a',
+      },
+      textColor: {
+        'light-text': '#000000',
+        'dark-text': '#ffffff',
+      },
     },
   },
   plugins: [],
