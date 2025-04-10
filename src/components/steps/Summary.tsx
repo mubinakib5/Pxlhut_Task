@@ -1,103 +1,95 @@
 "use client";
 
 import { useFormContext } from '@/context/FormContext';
-import { useMutation } from '@tanstack/react-query';
 
 export default function Summary() {
   const { formData, setCurrentStep } = useFormContext();
-  const { personalInfo, address, account } = formData;
-
-  const submitMutation = useMutation({
-    mutationFn: async (data: typeof formData) => {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      return data;
-    },
-    onSuccess: (data) => {
-      console.log('Form submitted successfully:', data);
-      // You can add success notification here
-    },
-  });
-
-  const handleSubmit = () => {
-    submitMutation.mutate(formData);
-  };
 
   return (
-    <div className="space-y-6">
-      <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-        <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-4">
-          Personal Information
-        </h3>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Label</p>
-            <p className="text-gray-800 dark:text-white">Value</p>
+    <div className="space-y-8">
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">Summary</h2>
+
+      <div className="space-y-6">
+        <div>
+          <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+            <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm mr-3">1</span>
+            Personal Information
+          </h3>
+          <div className="bg-white rounded-lg border border-gray-200 p-5 ml-11">
+            <dl className="space-y-3">
+              <div className="flex">
+                <dt className="w-24 flex-shrink-0 text-gray-500">Name:</dt>
+                <dd className="text-gray-900 font-medium">{formData.personalInfo?.fullName}</dd>
+              </div>
+              <div className="flex">
+                <dt className="w-24 flex-shrink-0 text-gray-500">Email:</dt>
+                <dd className="text-gray-900 font-medium">{formData.personalInfo?.email}</dd>
+              </div>
+              <div className="flex">
+                <dt className="w-24 flex-shrink-0 text-gray-500">Phone:</dt>
+                <dd className="text-gray-900 font-medium">{formData.personalInfo?.phoneNumber}</dd>
+              </div>
+            </dl>
           </div>
-          <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Full Name</p>
-            <p className="text-gray-900 dark:text-white">{personalInfo?.fullName}</p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+            <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm mr-3">2</span>
+            Address Details
+          </h3>
+          <div className="bg-white rounded-lg border border-gray-200 p-5 ml-11">
+            <dl className="space-y-3">
+              <div className="flex">
+                <dt className="w-24 flex-shrink-0 text-gray-500">Street:</dt>
+                <dd className="text-gray-900 font-medium">{formData.address?.streetAddress}</dd>
+              </div>
+              <div className="flex">
+                <dt className="w-24 flex-shrink-0 text-gray-500">City:</dt>
+                <dd className="text-gray-900 font-medium">{formData.address?.city}</dd>
+              </div>
+              <div className="flex">
+                <dt className="w-24 flex-shrink-0 text-gray-500">ZIP:</dt>
+                <dd className="text-gray-900 font-medium">{formData.address?.zipCode}</dd>
+              </div>
+            </dl>
           </div>
-          <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
-            <p className="text-gray-900 dark:text-white">{personalInfo?.email}</p>
-          </div>
-          <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Phone Number</p>
-            <p className="text-gray-900 dark:text-white">{personalInfo?.phoneNumber}</p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+            <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm mr-3">3</span>
+            Account Information
+          </h3>
+          <div className="bg-white rounded-lg border border-gray-200 p-5 ml-11">
+            <dl className="space-y-3">
+              <div className="flex">
+                <dt className="w-24 flex-shrink-0 text-gray-500">Username:</dt>
+                <dd className="text-gray-900 font-medium">{formData.account?.username}</dd>
+              </div>
+              <div className="flex">
+                <dt className="w-24 flex-shrink-0 text-gray-500">Password:</dt>
+                <dd className="text-gray-900 font-medium">********</dd>
+              </div>
+            </dl>
           </div>
         </div>
       </div>
 
-      <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-        <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Address Details</h3>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Street Address</p>
-            <p className="text-gray-900 dark:text-white">{address?.streetAddress}</p>
-          </div>
-          <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">City</p>
-            <p className="text-gray-900 dark:text-white">{address?.city}</p>
-          </div>
-          <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">ZIP Code</p>
-            <p className="text-gray-900 dark:text-white">{address?.zipCode}</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-        <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Account Details</h3>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Username</p>
-            <p className="text-gray-900 dark:text-white">{account?.username}</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex justify-between">
+      <div className="flex justify-between pt-6">
         <button
           type="button"
           onClick={() => setCurrentStep(3)}
-          className="bg-gray-100 hover:bg-gray-200 
-            dark:bg-gray-700 dark:hover:bg-gray-600 
-            text-gray-700 dark:text-gray-200 
-            px-4 py-2 rounded-md transition-colors"
+          className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-2.5 rounded-md transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
         >
           Previous
         </button>
         <button
           type="button"
-          onClick={handleSubmit}
-          disabled={submitMutation.isPending}
-          className="bg-blue-500 hover:bg-blue-600 
-            dark:bg-blue-600 dark:hover:bg-blue-700 
-            text-white px-4 py-2 rounded-md 
-            transition-colors disabled:opacity-50"
+          onClick={() => console.log('Form submitted:', formData)}
+          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2.5 rounded-md transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
-          {submitMutation.isPending ? 'Submitting...' : 'Submit'}
+          Confirm & Submit
         </button>
       </div>
     </div>

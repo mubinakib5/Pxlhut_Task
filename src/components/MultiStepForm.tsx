@@ -10,14 +10,14 @@ export default function MultiStepForm() {
   const { currentStep } = useFormContext();
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+    <div className="bg-white rounded-lg shadow-lg p-8">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+        <h2 className="text-2xl font-bold text-gray-800 mb-2">
           {currentStep === 4 ? 'Summary' : `Step ${currentStep} of 3`}
         </h2>
-        <div className="w-full bg-gray-100 dark:bg-gray-700 h-2 rounded-full">
+        <div className="w-full bg-gray-200 h-2 rounded-full">
           <div
-            className="bg-blue-500 dark:bg-blue-600 h-2 rounded-full transition-all duration-300"
+            className="bg-blue-600 h-2 rounded-full transition-all duration-300"
             style={{ width: `${(currentStep / 4) * 100}%` }}
           />
         </div>
